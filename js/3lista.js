@@ -3,6 +3,9 @@ $prenom = document.getElementById("prenom");
 $nom = document.getElementById("nom");
 $portable = document.getElementById("portable");
 $ajouter = document.getElementById("ajouter");
+$recherche = document.getElementById("recherche");
+$rechercher = document.getElementById("rechercher");
+$resultats = document.getElementById("resultats");
 
 contacts = [{
     prenom: "Marco",
@@ -35,5 +38,17 @@ function ajouter() {
     afficherListe();
 }
 
+function rechercher() {
+    recherche = $recherche.value;
+    elements = "";
+    for (i = 0; i < contacts.length; i++) {
+        if (contacts[i].prenom == recherche || contacts[i].nom == recherche || contacts[i].portable == recherche) {
+            elements += "<li>" + texteContact(contacts[i]) + "</li>";
+        }
+    }
+    $resultats.innerHTML = elements;
+}
+
 $ajouter.onclick = ajouter;
+$rechercher.onclick = rechercher;
 afficherListe();
