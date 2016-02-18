@@ -1,0 +1,8 @@
+.selected {
+  background-color: #73C6D1;
+  width:150px;
+}
+
+.poubelle {
+    display: none;
+}
